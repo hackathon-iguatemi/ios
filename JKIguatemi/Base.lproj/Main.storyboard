@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,50 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="JKIguatemi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JFs-3V-XBQ">
+                                <rect key="frame" x="0.0" y="322" width="375" height="350"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Uy-yZ-vXE">
+                                <rect key="frame" x="67" y="20" width="240" height="253"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-OX-PnD">
+                                <rect key="frame" x="16" y="293" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JFs-3V-XBQ" firstAttribute="top" secondItem="5Uy-yZ-vXE" secondAttribute="bottom" constant="8" symbolic="YES" id="4Az-mp-Y2c"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="JFs-3V-XBQ" secondAttribute="bottom" constant="-5" id="CYc-Xc-B34"/>
+                            <constraint firstItem="5Uy-yZ-vXE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="NPE-aw-1p2"/>
+                            <constraint firstItem="vfu-OX-PnD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eIx-nS-A2L"/>
+                            <constraint firstItem="5Uy-yZ-vXE" firstAttribute="centerX" secondItem="JFs-3V-XBQ" secondAttribute="centerX" id="ktZ-6K-Qne"/>
+                            <constraint firstItem="JFs-3V-XBQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="q5Z-ok-Wmj"/>
+                            <constraint firstItem="JFs-3V-XBQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="261" id="tC8-1z-33R"/>
+                            <constraint firstItem="JFs-3V-XBQ" firstAttribute="top" secondItem="vfu-OX-PnD" secondAttribute="bottom" constant="8" symbolic="YES" id="thl-2f-AV4"/>
+                            <constraint firstAttribute="trailing" secondItem="JFs-3V-XBQ" secondAttribute="trailing" id="xXh-Ff-E0X"/>
+                            <constraint firstItem="5Uy-yZ-vXE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zLs-LM-7mT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="inputImageView" destination="5Uy-yZ-vXE" id="1jK-eT-TFk"/>
+                        <outlet property="resultTextView" destination="JFs-3V-XBQ" id="sCf-P1-dha"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

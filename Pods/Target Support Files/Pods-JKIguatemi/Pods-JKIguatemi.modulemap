@@ -1,0 +1,6 @@
+framework module Pods_JKIguatemi {
+  umbrella header "Pods-JKIguatemi-umbrella.h"
+
+  export *
+  module * { export * }
+}
