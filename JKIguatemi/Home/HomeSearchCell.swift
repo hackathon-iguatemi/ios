@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchCollectionCell: UICollectionViewCell {
+class HomeSearchCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var aboutLabel: UILabel!

@@ -1,5 +1,5 @@
 //
-//  SearchCell.swift
+//  InfluencerOtherCell.swift
 //  JKIguatemi
 //
 //  Created by Jean Paul Marinho on 22/09/18.
@@ -8,20 +8,21 @@
 
 import UIKit
 
-class SearchCell: UITableViewCell {
+class InfluencerOtherCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
-
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
     }
 }
+    
 
 
 
-extension SearchCell: UICollectionViewDataSource, UICollectionViewDelegate  {
+extension InfluencerOtherCell: UICollectionViewDataSource, UICollectionViewDelegate  {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -32,8 +33,7 @@ extension SearchCell: UICollectionViewDataSource, UICollectionViewDelegate  {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCollectionCell
-        cell.imageView.image = UIImage(named: "image\(indexPath.row+1)")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         return cell
     }
 }
