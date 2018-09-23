@@ -14,7 +14,8 @@ class BroadcastCell: UITableViewCell {
     @IBOutlet var styleImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
 //    let imageURL = "https://images.bewakoof.com/utter/content/2968/content_skater_skirt_women_bewakoof_blog_1.jpg"
-    let imageURL = "https://qph.fs.quoracdn.net/main-qimg-3ad75011bf9764228e770c9034a53551-c"
+//    let imageURL = "https://qph.fs.quoracdn.net/main-qimg-3ad75011bf9764228e770c9034a53551-c"
+    let imageURL = "https://sc02.alicdn.com/kf/HTB1wzQsKFXXXXXJXFXXq6xXFXXXK/Ladies-Tops-New-Look-Floral-Crepe-Peplum.jpg"
 
     var wears = [Wear]()
     override func awakeFromNib() {

@@ -143,10 +143,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/TisprCardStack/TisprCardStack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/algorithmia/algorithmia.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/TisprCardStack/TisprCardStack.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/algorithmia/algorithmia.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi

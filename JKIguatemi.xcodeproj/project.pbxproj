@@ -12,6 +12,8 @@
 		5756F2462156C882008D0F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2442156C882008D0F56 /* Main.storyboard */; };
 		5756F2482156C884008D0F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2472156C884008D0F56 /* Assets.xcassets */; };
 		5756F24B2156C884008D0F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2492156C884008D0F56 /* LaunchScreen.storyboard */; };
+		57B1130D2157465600DC4EDA /* SelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B1130C2157465600DC4EDA /* SelectionViewController.swift */; };
+		57B1131121574BED00DC4EDA /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B1131021574BED00DC4EDA /* SelectionCell.swift */; };
 		57E584732156E2F900A9D6EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584722156E2F900A9D6EB /* HomeViewController.swift */; };
 		57E584782156FB3100A9D6EB /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584772156FB3100A9D6EB /* BorderView.swift */; };
 		57E5847A2156FE7100A9D6EB /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584792156FE7100A9D6EB /* HomeCell.swift */; };
@@ -37,6 +39,8 @@
 		5756F2472156C884008D0F56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5756F24A2156C884008D0F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5756F24C2156C884008D0F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B1130C2157465600DC4EDA /* SelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewController.swift; sourceTree = "<group>"; };
+		57B1131021574BED00DC4EDA /* SelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		57E584722156E2F900A9D6EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		57E584772156FB3100A9D6EB /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		57E584792156FE7100A9D6EB /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
@@ -103,9 +107,19 @@
 				57E5847D2157027100A9D6EB /* Home */,
 				57E58482215710B600A9D6EB /* Influencer */,
 				57E5849321572C7900A9D6EB /* Broadcast */,
+				57B1130F21574BCE00DC4EDA /* Selection */,
 				57E584742156E31300A9D6EB /* Supporting Files */,
 			);
 			path = JKIguatemi;
+			sourceTree = "<group>";
+		};
+		57B1130F21574BCE00DC4EDA /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+				57B1130C2157465600DC4EDA /* SelectionViewController.swift */,
+				57B1131021574BED00DC4EDA /* SelectionCell.swift */,
+			);
+			path = Selection;
 			sourceTree = "<group>";
 		};
 		57E584742156E31300A9D6EB /* Supporting Files */ = {
@@ -242,11 +256,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JKIguatemi/Pods-JKIguatemi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TisprCardStack/TisprCardStack.framework",
 				"${BUILT_PRODUCTS_DIR}/algorithmia/algorithmia.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TisprCardStack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/algorithmia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
@@ -282,12 +298,14 @@
 			files = (
 				57E5848E2157205100A9D6EB /* BroadcastViewController.swift in Sources */,
 				57E584782156FB3100A9D6EB /* BorderView.swift in Sources */,
+				57B1131121574BED00DC4EDA /* SelectionCell.swift in Sources */,
 				57E584972157322A00A9D6EB /* Wear.swift in Sources */,
 				57E58488215718DC00A9D6EB /* HomeAdCell.swift in Sources */,
 				57E5847F2157062000A9D6EB /* HomeSearchViewController.swift in Sources */,
 				57E5847A2156FE7100A9D6EB /* HomeCell.swift in Sources */,
 				57E584812157087800A9D6EB /* InfluencerViewController.swift in Sources */,
 				57E5849221572C7000A9D6EB /* BroadcastCell.swift in Sources */,
+				57B1130D2157465600DC4EDA /* SelectionViewController.swift in Sources */,
 				57E5849521572DB900A9D6EB /* BroadcastCollectionCell.swift in Sources */,
 				57E58486215716AE00A9D6EB /* InfluencerStyleCell.swift in Sources */,
 				57E584732156E2F900A9D6EB /* HomeViewController.swift in Sources */,
