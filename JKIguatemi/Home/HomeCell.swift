@@ -16,6 +16,7 @@ class HomeCell: UITableViewCell {
     @IBOutlet var followersCount: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     var namesString = [String]()
+    var storesString = [String]()
     var currentNumber = 1
     var nextInt = 1
     
@@ -24,12 +25,21 @@ class HomeCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         fetchSimilars()
+        fetchStores()
     }
     
     func fetchSimilars() {
         if let URL = Bundle.main.url(forResource: "Selection", withExtension: "plist") {
             if let plistRes = NSArray(contentsOf: URL) as? [String] {
                 namesString = plistRes
+            }
+        }
+    }
+    
+    func fetchStores() {
+        if let URL = Bundle.main.url(forResource: "Stores", withExtension: "plist") {
+            if let plistRes = NSArray(contentsOf: URL) as? [String] {
+                storesString = plistRes
             }
         }
         collectionView.reloadData()
@@ -61,7 +71,9 @@ extension HomeCell: UICollectionViewDataSource, UICollectionViewDelegate  {
         if namesString.count > 0 {
             cell.aboutLabel.text = namesString[Int.random(in: 1 ..< 6)]
         }
-        
+        if storesString.count > 0 {
+            cell.storeLabel.text = storesString[Int.random(in: 1 ..< 4)]
+        }
         return cell
     }
 }
