@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ImageLoader
+import ANLoader
 
 protocol  InfluencerStyleCellDelegate {
     func itemSelected(image: UIImage)
@@ -31,6 +31,7 @@ class InfluencerStyleCell: UITableViewCell {
             lookImages.append(UIImage(data: data!)!)
         }
         collectionView.reloadData()
+        ANLoader.hide()
     }
     
     override func awakeFromNib() {

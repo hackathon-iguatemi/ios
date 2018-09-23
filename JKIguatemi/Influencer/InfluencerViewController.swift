@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ANLoader
 
 class InfluencerViewController: UIViewController {
 
@@ -36,6 +37,7 @@ class InfluencerViewController: UIViewController {
     }
     
     func fetchScreen() {
+        ANLoader.showLoading()
         APIClient.getInfluencerDetail(with: influencerName) { (influencer) in
             self.influencer = influencer.value
             self.updateScreen()

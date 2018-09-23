@@ -10,5 +10,5 @@ target 'JKIguatemi' do
   pod 'lottie-ios'
   pod 'TisprCardStack'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
-  pod 'ImageLoader'
+  pod 'ANLoader'
 end

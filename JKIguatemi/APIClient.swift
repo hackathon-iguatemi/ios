@@ -45,7 +45,7 @@ class APIClient {
     }
     
     class func getInfluencerDetail(with name: String, completion:@escaping (Result<Influencer>)->Void) {
-        AF.request("https://hacka-jk.herokuapp.com/images/\(name)").responseJSONDecodable { (response: DataResponse<Influencer>) in
+        AF.request("https://hacka-jk.herokuapp.com/images/\(name.replacingOccurrences(of: " ", with: ""))").responseJSONDecodable { (response: DataResponse<Influencer>) in
             completion(response.result)
         }
     }

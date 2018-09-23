@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ANLoader
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ANLoader.activityColor = #colorLiteral(red: 0.8392156863, green: 0.662745098, blue: 0.2509803922, alpha: 1)
+        ANLoader.activityBackgroundColor = .clear
+        ANLoader.activityTextColor = .clear
         return true
     }
 
