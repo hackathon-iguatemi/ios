@@ -29,9 +29,9 @@ class CheckoutViewController: UIViewController {
             request.currencyCode = "BRL"
             request.supportedNetworks = paymentNetworks
             request.merchantCapabilities = .capabilityCredit
-            let summaryItem = PKPaymentSummaryItem(label: "Plantae", amount: NSDecimalNumber(value: 15.50), type: .final)
-            let taxSummaryItem = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(value: 1.30), type: .final)
-            let total = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(value: 16.80), type: .final)
+            let summaryItem = PKPaymentSummaryItem(label: "Louis Vuitton", amount: NSDecimalNumber(value: 250), type: .final)
+            let taxSummaryItem = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(value: 3), type: .final)
+            let total = PKPaymentSummaryItem(label: "Total", amount: NSDecimalNumber(value: 253), type: .final)
             request.paymentSummaryItems = [summaryItem, taxSummaryItem, total]
             let authorizationViewController = PKPaymentAuthorizationViewController(paymentRequest: request)
             authorizationViewController?.delegate = self

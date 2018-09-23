@@ -12,15 +12,21 @@ import Lottie
 class BroadcastViewController: UIViewController {
 
     @IBOutlet var loadingContainerView: UIView!
+    var imagesURL = [URL]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         let animationView = LOTAnimationView(name: "loading")
         animationView.frame = loadingContainerView.bounds
         loadingContainerView.addSubview(animationView)
         animationView.loopAnimation = true
         animationView.contentMode = .scaleAspectFit
         animationView.play{ (finished) in
+        }
+        Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { (timer) in
+            timer.invalidate()
+            self.performSegue(withIdentifier: "toSelectionVC", sender: nil)
         }
     }
 }
@@ -34,12 +40,14 @@ extension BroadcastViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return imagesURL.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        return cell!
+        let imageURL = imagesURL[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BroadcastCell
+        cell.imageURL = imageURL
+        return cell
     }
 }
 

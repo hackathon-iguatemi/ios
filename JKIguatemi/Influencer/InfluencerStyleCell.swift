@@ -9,7 +9,7 @@
 import UIKit
 
 protocol  InfluencerStyleCellDelegate {
-    func itemSelected()
+    func itemSelected(image: UIImage)
 }
 
 class InfluencerStyleCell: UITableViewCell {
@@ -43,6 +43,8 @@ extension InfluencerStyleCell: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.itemSelected()
+        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerStyleCollectionCell
+        cell.checkImageView.isHidden = !cell.checkImageView.isHidden
+        delegate?.itemSelected(image: cell.imageView.image!)
     }
 }

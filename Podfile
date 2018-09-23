@@ -9,4 +9,5 @@ target 'JKIguatemi' do
   pod 'algorithmia'
   pod 'lottie-ios'
   pod 'TisprCardStack'
+  pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
 end

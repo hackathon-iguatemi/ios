@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		428601EA9FFDEBEA295545E8 /* Pods_JKIguatemi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4544046649440A461C0D9BB /* Pods_JKIguatemi.framework */; };
 		57076D15215771E100053241 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57076D14215771E100053241 /* CheckoutViewController.swift */; };
+		57076D1821577EC800053241 /* HomeButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57076D1721577EC800053241 /* HomeButtonCell.swift */; };
+		57076D1A215780D800053241 /* Influencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57076D19215780D800053241 /* Influencer.swift */; };
+		57076D1C21578DE600053241 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57076D1B21578DE600053241 /* APIClient.swift */; };
 		572AC2F421576B1300FBB774 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AC2F321576B1300FBB774 /* GradientView.swift */; };
 		5756F2412156C882008D0F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756F2402156C882008D0F56 /* AppDelegate.swift */; };
 		5756F2462156C882008D0F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2442156C882008D0F56 /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 /* Begin PBXFileReference section */
 		57076D14215771E100053241 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		57076D162157735700053241 /* JKIguatemi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JKIguatemi.entitlements; sourceTree = "<group>"; };
+		57076D1721577EC800053241 /* HomeButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeButtonCell.swift; sourceTree = "<group>"; };
+		57076D19215780D800053241 /* Influencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Influencer.swift; sourceTree = "<group>"; };
+		57076D1B21578DE600053241 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		572AC2F321576B1300FBB774 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5756F23D2156C882008D0F56 /* JKIguatemi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKIguatemi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5756F2402156C882008D0F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 			children = (
 				57076D162157735700053241 /* JKIguatemi.entitlements */,
 				5756F2442156C882008D0F56 /* Main.storyboard */,
+				57076D1B21578DE600053241 /* APIClient.swift */,
 				57E5847D2157027100A9D6EB /* Home */,
 				57E58482215710B600A9D6EB /* Influencer */,
 				57E5849321572C7900A9D6EB /* Broadcast */,
@@ -149,9 +156,11 @@
 			isa = PBXGroup;
 			children = (
 				57E584722156E2F900A9D6EB /* HomeViewController.swift */,
+				57076D1721577EC800053241 /* HomeButtonCell.swift */,
 				57E5847E2157062000A9D6EB /* HomeSearchViewController.swift */,
 				57E584792156FE7100A9D6EB /* HomeCell.swift */,
 				57E58487215718DC00A9D6EB /* HomeAdCell.swift */,
+				57076D19215780D800053241 /* Influencer.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -269,14 +278,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JKIguatemi/Pods-JKIguatemi-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GradientView/GradientView.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/TisprCardStack/TisprCardStack.framework",
 				"${BUILT_PRODUCTS_DIR}/algorithmia/algorithmia.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GradientView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TisprCardStack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/algorithmia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
@@ -317,6 +326,7 @@
 				57B1131121574BED00DC4EDA /* SelectionCell.swift in Sources */,
 				57E584972157322A00A9D6EB /* Wear.swift in Sources */,
 				57E58488215718DC00A9D6EB /* HomeAdCell.swift in Sources */,
+				57076D1821577EC800053241 /* HomeButtonCell.swift in Sources */,
 				57E5847F2157062000A9D6EB /* HomeSearchViewController.swift in Sources */,
 				57E5847A2156FE7100A9D6EB /* HomeCell.swift in Sources */,
 				57076D15215771E100053241 /* CheckoutViewController.swift in Sources */,
@@ -328,8 +338,10 @@
 				57E584732156E2F900A9D6EB /* HomeViewController.swift in Sources */,
 				57E58484215710E300A9D6EB /* InfluencerOtherCell.swift in Sources */,
 				57E5848C21571E9E00A9D6EB /* Extensions.swift in Sources */,
+				57076D1A215780D800053241 /* Influencer.swift in Sources */,
 				57E5848A21571E5E00A9D6EB /* OverlayView.swift in Sources */,
 				5756F2412156C882008D0F56 /* AppDelegate.swift in Sources */,
+				57076D1C21578DE600053241 /* APIClient.swift in Sources */,
 				57E5847C2157004900A9D6EB /* InfluencerStyleCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

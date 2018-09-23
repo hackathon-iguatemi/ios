@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GradientView
 
 protocol SelectionCellDelegate {
     func deletePressed()

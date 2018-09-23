@@ -13,26 +13,27 @@ class BroadcastCell: UITableViewCell {
 
     @IBOutlet var styleImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
-//    let imageURL = "https://images.bewakoof.com/utter/content/2968/content_skater_skirt_women_bewakoof_blog_1.jpg"
-//    let imageURL = "https://qph.fs.quoracdn.net/main-qimg-3ad75011bf9764228e770c9034a53551-c"
-    let imageURL = "https://sc02.alicdn.com/kf/HTB1wzQsKFXXXXXJXFXXq6xXFXXXK/Ladies-Tops-New-Look-Floral-Crepe-Peplum.jpg"
-
+    var imageURL: URL? {
+        didSet {
+            fetchML()
+        }
+    }
     var wears = [Wear]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
         styleImageView.layer.cornerRadius = 12
-        fetchML()
     }
     
     func fetchML() {
-        let data = try? Data(contentsOf: URL(string: imageURL)!)
+        let data = try? Data(contentsOf: imageURL!)
         if let imageData = data {
             styleImageView.image = UIImage(data: imageData)
         }
         let input = "{"
-            + "  \"image\": \"\(imageURL)\","
+            + "  \"image\": \"\(imageURL!)\","
             + "  \"model\": \"small\","
             + "  \"tags_only\": true"
             + "}";
@@ -65,7 +66,7 @@ extension BroadcastCell: UICollectionViewDataSource, UICollectionViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let wear = wears[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BroadcastCollectionCell
-        let data = try? Data(contentsOf: URL(string: imageURL)!)
+        let data = try? Data(contentsOf: imageURL!)
         if let imageData = data {
             let imageRAW = UIImage(data: imageData)
             cell.imageView.image = imageRAW?.cropped(boundingBox: CGRect(x: wear.boundingBox.x0, y: wear.boundingBox.y0, width: wear.boundingBox.x1/2, height: wear.boundingBox.y1/2))

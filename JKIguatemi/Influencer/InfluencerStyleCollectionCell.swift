@@ -11,8 +11,8 @@ import UIKit
 class InfluencerStyleCollectionCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var aboutLabel: UILabel!
-    
+    @IBOutlet var checkImageView: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         imageView.layer.cornerRadius = 12

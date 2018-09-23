@@ -12,6 +12,13 @@ class InfluencerViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var proceedView: UIView!
+    var influencerName: String! {
+        didSet {
+            fetchScreen()
+        }
+    }
+    var selectedImages = [UIImage]()
+    var imagesSentCount = 0
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -23,6 +30,15 @@ class InfluencerViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.view.backgroundColor = UIColor.clear
+    }
+    
+    func fetchScreen() {
+        APIClient.getInfluencerDetail(with: influencerName) { (result) in
+            print(result)
+        }
+    }
+    
+    @IBAction func broadcastPressed(_ sender: UIButton) {
     }
 }
 
@@ -64,12 +80,20 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension InfluencerViewController: InfluencerStyleCellDelegate {
     
-    func itemSelected() {
-        proceedView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 100)
-        view.addSubview(proceedView)
-        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
-            self.proceedView.frame = CGRect(x: 0, y: self.view.frame.height-100, width: self.view.frame.width, height: 100)
-        }, completion: { success in
-        })
+    func itemSelected(image: UIImage) {
+        if selectedImages.count == 0 {
+            proceedView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 100)
+            view.addSubview(proceedView)
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+                self.proceedView.frame = CGRect(x: 0, y: self.view.frame.height-100, width: self.view.frame.width, height: 100)
+            }, completion: { success in
+            })
+            if selectedImages.contains(image) {
+                selectedImages.remove(at: selectedImages.lastIndex(of: image)!)
+            }
+            else {
+                selectedImages.append(image)
+            }
+        }
     }
 }
