@@ -20,8 +20,11 @@ class SelectionCell: UICollectionViewCell {
     }
     
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var aboutLabel: UILabel!
     var delegate: SelectionCellDelegate?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 12

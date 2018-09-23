@@ -10,18 +10,26 @@ import Foundation
 import UIKit
 
 struct AlgorithmiaResponse: Codable {
+    let imageURL: String?
     let articles: [Wear]
+    
+    init?(imageURL: String, articles: [Wear]) {
+        self.imageURL = imageURL
+        self.articles = articles
+    }
 }
 
 struct Wear: Codable {
     let name: String
     let confidence: Float
     let boundingBox: BoundingBox
+    var primaryColor: String?
     
     enum CodingKeys: String, CodingKey {
         case name = "article_name"
         case confidence = "confidence"
         case boundingBox = "bounding_box"
+        case primaryColor = "primaryColor"
     }
 }
 

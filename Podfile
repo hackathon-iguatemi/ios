@@ -11,4 +11,5 @@ target 'JKIguatemi' do
   pod 'TisprCardStack'
   pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'alamofire5'
   pod 'ANLoader'
+  pod 'UIImageColors'
 end

@@ -633,7 +633,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="customSize" width="374" height="500"/>
                                 <connections>
+                                    <outlet property="aboutLabel" destination="xEN-NH-lEv" id="Xlp-Fq-qbw"/>
                                     <outlet property="imageView" destination="j8f-RB-aeP" id="ZI7-dV-TfR"/>
+                                    <outlet property="nameLabel" destination="msd-v7-dm8" id="yPa-lU-aRH"/>
+                                    <outlet property="priceLabel" destination="9TF-bY-M5G" id="lYB-5i-o4j"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

@@ -14,6 +14,9 @@ class BroadcastViewController: UIViewController {
     @IBOutlet var loadingContainerView: UIView!
     var images = [UIImage]()
     var imagesURL = [URL]()
+    var influencerName: String!
+    var request = [AlgorithmiaResponse]()
+    var index = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,11 @@ class BroadcastViewController: UIViewController {
             timer.invalidate()
             self.performSegue(withIdentifier: "toSelectionVC", sender: nil)
         }
+    }
+    
+    func postData() {
+        APIClient.sendML(name: influencerName, mlData: request)
+        
     }
 }
 
@@ -47,8 +55,23 @@ extension BroadcastViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let imageURL = imagesURL[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! BroadcastCell
+        cell.delegate = self
         cell.imageURL = imageURL
         return cell
+    }
+}
+
+
+
+extension BroadcastViewController: BroadcastCellDelegate {
+    
+    func mlFinished(with wears: [Wear]) {
+        let algo = AlgorithmiaResponse(imageURL: imagesURL[index].absoluteString, articles: wears)
+        request.append(algo!)
+        index += 1
+        if index == imagesURL.count {
+            postData()
+        }
     }
 }
 

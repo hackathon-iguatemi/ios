@@ -75,4 +75,17 @@ class APIClient {
             let y1: Int
         }
     }
+    
+    class func sendML(name: String, mlData: [AlgorithmiaResponse]) {
+        let encoder = JSONEncoder()
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        let resultado_vr = try! encoder.encode(mlData)
+        let mlBody = String(data: resultado_vr, encoding: .utf8)
+        let params = ["texto_chave": name, "idCliente":1, "resultado_vr": mlBody!] as [String : Any]
+        AF.request("http://hackathon-iguatemi.mybluemix.net/api/broadcast", method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseString { (result) in
+            print(result)
+        }
+    }
 }

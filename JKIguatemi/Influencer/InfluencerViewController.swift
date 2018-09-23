@@ -41,6 +41,7 @@ class InfluencerViewController: UIViewController {
         let vc = segue.destination as! BroadcastViewController
         vc.imagesURL = selectedURLs
         vc.images = selectedImages
+        vc.influencerName = influencerName
     }
     
     func fetchScreen() {

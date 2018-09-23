@@ -9,18 +9,25 @@
 import UIKit
 import algorithmia
 import ANLoader
+import UIImageColors
+
+protocol BroadcastCellDelegate {
+    func mlFinished(with wears: [Wear])
+}
 
 class BroadcastCell: UITableViewCell {
 
     @IBOutlet var styleImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
     var lookImage: UIImage?
+    var delegate: BroadcastCellDelegate?
     var imageURL: URL? {
         didSet {
             fetchML()
         }
     }
     var wears = [Wear]()
+    var wearImages = [UIImage]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,6 +60,18 @@ class BroadcastCell: UITableViewCell {
             }
         }
     }
+    
+    func fillColors() {
+        var index = 0
+        var wearsMod = [Wear]()
+        for wear in wears {
+            var wearMod = wear
+            wearMod.primaryColor = wearImages[index].getColors().primary.toHexString()
+            wearsMod.append(wearMod)
+            index += 1
+        }
+        delegate?.mlFinished(with: wearsMod)
+    }
 }
 
 
@@ -73,7 +92,12 @@ extension BroadcastCell: UICollectionViewDataSource, UICollectionViewDelegate  {
         let data = try? Data(contentsOf: imageURL!)
         if let imageData = data {
             let imageRAW = UIImage(data: imageData)
-            cell.imageView.image = imageRAW?.cropped(boundingBox: CGRect(x: wear.boundingBox.x0, y: wear.boundingBox.y0, width: wear.boundingBox.x1/2, height: wear.boundingBox.y1/2))
+            let wearImage = imageRAW?.cropped(boundingBox: CGRect(x: wear.boundingBox.x0, y: wear.boundingBox.y0, width: wear.boundingBox.x1/2, height: wear.boundingBox.y1/2))
+            wearImages.append(wearImage!)
+            if wearImages.count == wears.count {
+                fillColors()
+            }
+            cell.imageView.image = wearImage
         }
         cell.aboutLabel.text = "\(wear.name.capitalizingFirstLetter())"
         cell.confidenceLabel.text = "\(String(format: "%.2f", wear.confidence*100))%"

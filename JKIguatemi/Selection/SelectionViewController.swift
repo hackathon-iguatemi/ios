@@ -29,7 +29,7 @@ class SelectionViewController: CardStackViewController {
     
     fileprivate var countOfCards: Int = 6
     var possibleMoves = 6
-    
+    var cardsString = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +42,15 @@ class SelectionViewController: CardStackViewController {
         layout.topStackMaximumSize = Constants.topStackVisibleCardCount
         layout.bottomStackMaximumSize = Constants.bottomStackVisibleCardCount
         layout.bottomStackCardHeight = Constants.bottomStackCardHeight
+    }
+    
+    func fetchSelections() {
+        if let URL = Bundle.main.url(forResource: "Selection", withExtension: "plist") {
+            if let plistRes = NSArray(contentsOf: URL) as? [String] {
+                cardsString = plistRes
+            }
+        }
+        collectionView.reloadData()
     }
     
     func addCard() {
@@ -63,7 +72,8 @@ extension SelectionViewController : CardStackDatasource {
     func card(_ cardStack: CardStackView, cardForItemAtIndex index: IndexPath) -> CardStackViewCell {
         let cell = cardStack.dequeueReusableCell(withReuseIdentifier: "cell", for: index) as! SelectionCell
         cell.delegate = self
-        cell.imageView.image = UIImage(named: "ad\(Int.random(in: 1...4))")
+        cell.imageView.image = UIImage(named: "ad\(index.row + 1)")
+        cell.priceLabel.text = "$\(Int.random(in: 50...300))"
         cell.backgroundColor = Constants.colors[index.item % Constants.colors.count]
         return cell
     }

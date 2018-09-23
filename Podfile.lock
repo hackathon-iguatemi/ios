@@ -4,6 +4,7 @@ PODS:
   - ANLoader (1.1.1)
   - lottie-ios (2.5.0)
   - TisprCardStack (3.0.0)
+  - UIImageColors (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - ANLoader
   - lottie-ios
   - TisprCardStack
+  - UIImageColors
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -18,6 +20,7 @@ SPEC REPOS:
     - ANLoader
     - lottie-ios
     - TisprCardStack
+    - UIImageColors
 
 EXTERNAL SOURCES:
   Alamofire:
@@ -35,7 +38,8 @@ SPEC CHECKSUMS:
   ANLoader: 46bad48a249902b50a04e510a204f0a3d36a981d
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   TisprCardStack: 49c1b04e124105d7f0bcec3e0a6aac703229e143
+  UIImageColors: 3ae0150e539342697808281a3975fe5dec2024ce
 
-PODFILE CHECKSUM: e52631a9bf4e3dd890f5f542ebf631b5f69935c2
+PODFILE CHECKSUM: 7662a7f018cb0b69bd301548bbd491f496c47add
 
 COCOAPODS: 1.5.3
