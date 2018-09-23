@@ -12,6 +12,7 @@ class BroadcastCollectionCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var aboutLabel: UILabel!
+    @IBOutlet var confidenceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

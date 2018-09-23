@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		428601EA9FFDEBEA295545E8 /* Pods_JKIguatemi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4544046649440A461C0D9BB /* Pods_JKIguatemi.framework */; };
 		5756F2412156C882008D0F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756F2402156C882008D0F56 /* AppDelegate.swift */; };
-		5756F2432156C882008D0F56 /* VisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756F2422156C882008D0F56 /* VisionViewController.swift */; };
 		5756F2462156C882008D0F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2442156C882008D0F56 /* Main.storyboard */; };
 		5756F2482156C884008D0F56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2472156C884008D0F56 /* Assets.xcassets */; };
 		5756F24B2156C884008D0F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2492156C884008D0F56 /* LaunchScreen.storyboard */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		5756F23D2156C882008D0F56 /* JKIguatemi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKIguatemi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5756F2402156C882008D0F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5756F2422156C882008D0F56 /* VisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionViewController.swift; sourceTree = "<group>"; };
 		5756F2452156C882008D0F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5756F2472156C884008D0F56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5756F24A2156C884008D0F56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 				57E5848D2157205100A9D6EB /* BroadcastViewController.swift */,
 				57E5849121572C7000A9D6EB /* BroadcastCell.swift */,
 				57E5849421572DB900A9D6EB /* BroadcastCollectionCell.swift */,
-				5756F2422156C882008D0F56 /* VisionViewController.swift */,
 				57E584962157322A00A9D6EB /* Wear.swift */,
 			);
 			path = Broadcast;
@@ -296,7 +293,6 @@
 				57E584732156E2F900A9D6EB /* HomeViewController.swift in Sources */,
 				57E58484215710E300A9D6EB /* InfluencerOtherCell.swift in Sources */,
 				57E5848C21571E9E00A9D6EB /* Extensions.swift in Sources */,
-				5756F2432156C882008D0F56 /* VisionViewController.swift in Sources */,
 				57E5848A21571E5E00A9D6EB /* OverlayView.swift in Sources */,
 				5756F2412156C882008D0F56 /* AppDelegate.swift in Sources */,
 				57E5847C2157004900A9D6EB /* InfluencerStyleCollectionCell.swift in Sources */,

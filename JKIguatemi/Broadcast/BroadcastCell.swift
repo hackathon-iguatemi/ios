@@ -13,8 +13,10 @@ class BroadcastCell: UITableViewCell {
 
     @IBOutlet var styleImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
+//    let imageURL = "https://images.bewakoof.com/utter/content/2968/content_skater_skirt_women_bewakoof_blog_1.jpg"
+    let imageURL = "https://qph.fs.quoracdn.net/main-qimg-3ad75011bf9764228e770c9034a53551-c"
+
     var wears = [Wear]()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
@@ -24,7 +26,6 @@ class BroadcastCell: UITableViewCell {
     }
     
     func fetchML() {
-        let imageURL = "https://images.bewakoof.com/utter/content/2968/content_skater_skirt_women_bewakoof_blog_1.jpg"
         let data = try? Data(contentsOf: URL(string: imageURL)!)
         if let imageData = data {
             styleImageView.image = UIImage(data: imageData)
@@ -63,7 +64,13 @@ extension BroadcastCell: UICollectionViewDataSource, UICollectionViewDelegate  {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let wear = wears[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! BroadcastCollectionCell
-        cell.aboutLabel.text = "\(wear.name.capitalizingFirstLetter()) - \(String(format: "%.2f", wear.confidence))"
+        let data = try? Data(contentsOf: URL(string: imageURL)!)
+        if let imageData = data {
+            let imageRAW = UIImage(data: imageData)
+            cell.imageView.image = imageRAW?.cropped(boundingBox: CGRect(x: wear.boundingBox.x0, y: wear.boundingBox.y0, width: wear.boundingBox.x1/2, height: wear.boundingBox.y1/2))
+        }
+        cell.aboutLabel.text = "\(wear.name.capitalizingFirstLetter())"
+        cell.confidenceLabel.text = "\(String(format: "%.2f", wear.confidence*100))%"
         return cell
     }
 }
