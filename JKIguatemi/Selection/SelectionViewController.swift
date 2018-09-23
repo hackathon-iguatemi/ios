@@ -28,6 +28,7 @@ class SelectionViewController: CardStackViewController {
     }
     
     fileprivate var countOfCards: Int = 6
+    var possibleMoves = 6
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,15 +48,21 @@ class SelectionViewController: CardStackViewController {
         countOfCards += 1
         newCardAdded()
     }
+    
+    func nextScreen() {
+        performSegue(withIdentifier: "toCheckoutVC", sender: nil)
+    }
 }
 
 extension SelectionViewController : CardStackDatasource {
+   
     func numberOfCards(in cardStack: CardStackView) -> Int {
         return countOfCards
     }
     
     func card(_ cardStack: CardStackView, cardForItemAtIndex index: IndexPath) -> CardStackViewCell {
         let cell = cardStack.dequeueReusableCell(withReuseIdentifier: "cell", for: index) as! SelectionCell
+        cell.delegate = self
         cell.imageView.image = UIImage(named: "ad\(Int.random(in: 1...4))")
         cell.backgroundColor = Constants.colors[index.item % Constants.colors.count]
         return cell
@@ -63,9 +70,21 @@ extension SelectionViewController : CardStackDatasource {
     
 }
 
-extension SelectionViewController: CardStackDelegate {
+extension SelectionViewController: CardStackDelegate, SelectionCellDelegate {
     
     func cardDidChangeState(_ cardIndex: Int) {
-        print(cardIndex)
+        possibleMoves -= 1
+        if possibleMoves == 0 {
+            nextScreen()
+        }
+    }
+    
+    func deletePressed() {
+        possibleMoves -= 1
+        countOfCards -= 1
+        deleteCard()
+        if possibleMoves == 0 {
+            nextScreen()
+        }
     }
 }

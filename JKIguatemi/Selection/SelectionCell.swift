@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import GradientView
+
+protocol SelectionCellDelegate {
+    func deletePressed()
+}
 
 class SelectionCell: UICollectionViewCell {
     
@@ -16,6 +21,7 @@ class SelectionCell: UICollectionViewCell {
     }
     
     @IBOutlet var imageView: UIImageView!
+    var delegate: SelectionCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +32,10 @@ class SelectionCell: UICollectionViewCell {
         didSet {
             updateVisual()
         }
+    }
+    
+    @IBAction func deletePressed(_ sender: Any) {
+        delegate?.deletePressed()
     }
     
     override internal func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
