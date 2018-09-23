@@ -11,6 +11,7 @@ import UIKit
 class InfluencerViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var proceedView: UIView!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -40,8 +41,9 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell")
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell") as! InfluencerStyleCell
+            cell.delegate = self
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "otherCell")
             return cell!
@@ -51,10 +53,23 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
         case 0:
-            return 260
+            return 300
         default:
-            return 150
+            return 200
         }
     }
+}
+
+
+
+extension InfluencerViewController: InfluencerStyleCellDelegate {
     
+    func itemSelected() {
+        proceedView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 100)
+        view.addSubview(proceedView)
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+            self.proceedView.frame = CGRect(x: 0, y: self.view.frame.height-100, width: self.view.frame.width, height: 100)
+        }, completion: { success in
+        })
+    }
 }

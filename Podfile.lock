@@ -1,16 +1,20 @@
 PODS:
   - algorithmia (0.1.3)
+  - lottie-ios (2.5.0)
 
 DEPENDENCIES:
   - algorithmia
+  - lottie-ios
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - algorithmia
+    - lottie-ios
 
 SPEC CHECKSUMS:
   algorithmia: 6416ed22db9b00a354bf92b6fdf59f1ca449a176
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
 
-PODFILE CHECKSUM: 13ebcc47348f2b47b21eddd554e6c4b9af3de2d6
+PODFILE CHECKSUM: eb9cddedd992709e5bf80c4220ebbf3505e18ac9
 
 COCOAPODS: 1.5.3

@@ -32,9 +32,8 @@ extension HomeCell: UICollectionViewDataSource, UICollectionViewDelegate  {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeSearchCell
-        cell.imageView.image = UIImage(named: "image\(indexPath.row+1)")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeAdCell
+        cell.imageView.image = UIImage(named: "ad\(indexPath.row+1)")
         return cell
     }
 }
-

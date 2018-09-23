@@ -7,4 +7,5 @@ target 'JKIguatemi' do
 
   # Pods for JKIguatemi
   pod 'algorithmia'
+  pod 'lottie-ios'
 end

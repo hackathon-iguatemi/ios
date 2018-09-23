@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BorderView: UIView {
+class InstagramBorderView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeSearchCell: UICollectionViewCell {
+class InfluencerStyleCollectionCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var aboutLabel: UILabel!

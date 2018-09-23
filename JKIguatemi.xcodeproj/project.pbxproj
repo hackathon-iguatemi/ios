@@ -16,10 +16,19 @@
 		57E584732156E2F900A9D6EB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584722156E2F900A9D6EB /* HomeViewController.swift */; };
 		57E584782156FB3100A9D6EB /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584772156FB3100A9D6EB /* BorderView.swift */; };
 		57E5847A2156FE7100A9D6EB /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584792156FE7100A9D6EB /* HomeCell.swift */; };
-		57E5847C2157004900A9D6EB /* HomeSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5847B2157004900A9D6EB /* HomeSearchCell.swift */; };
+		57E5847C2157004900A9D6EB /* InfluencerStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5847B2157004900A9D6EB /* InfluencerStyleCollectionCell.swift */; };
 		57E5847F2157062000A9D6EB /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5847E2157062000A9D6EB /* HomeSearchViewController.swift */; };
 		57E584812157087800A9D6EB /* InfluencerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584802157087800A9D6EB /* InfluencerViewController.swift */; };
 		57E58484215710E300A9D6EB /* InfluencerOtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E58483215710E300A9D6EB /* InfluencerOtherCell.swift */; };
+		57E58486215716AE00A9D6EB /* InfluencerStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E58485215716AE00A9D6EB /* InfluencerStyleCell.swift */; };
+		57E58488215718DC00A9D6EB /* HomeAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E58487215718DC00A9D6EB /* HomeAdCell.swift */; };
+		57E5848A21571E5E00A9D6EB /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5848921571E5E00A9D6EB /* OverlayView.swift */; };
+		57E5848C21571E9E00A9D6EB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5848B21571E9E00A9D6EB /* Extensions.swift */; };
+		57E5848E2157205100A9D6EB /* BroadcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5848D2157205100A9D6EB /* BroadcastViewController.swift */; };
+		57E584902157295B00A9D6EB /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 57E5848F2157295B00A9D6EB /* loading.json */; };
+		57E5849221572C7000A9D6EB /* BroadcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5849121572C7000A9D6EB /* BroadcastCell.swift */; };
+		57E5849521572DB900A9D6EB /* BroadcastCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E5849421572DB900A9D6EB /* BroadcastCollectionCell.swift */; };
+		57E584972157322A00A9D6EB /* Wear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E584962157322A00A9D6EB /* Wear.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,10 +42,19 @@
 		57E584722156E2F900A9D6EB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		57E584772156FB3100A9D6EB /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		57E584792156FE7100A9D6EB /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
-		57E5847B2157004900A9D6EB /* HomeSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchCell.swift; sourceTree = "<group>"; };
+		57E5847B2157004900A9D6EB /* InfluencerStyleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerStyleCollectionCell.swift; sourceTree = "<group>"; };
 		57E5847E2157062000A9D6EB /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
 		57E584802157087800A9D6EB /* InfluencerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerViewController.swift; sourceTree = "<group>"; };
 		57E58483215710E300A9D6EB /* InfluencerOtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerOtherCell.swift; sourceTree = "<group>"; };
+		57E58485215716AE00A9D6EB /* InfluencerStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerStyleCell.swift; sourceTree = "<group>"; };
+		57E58487215718DC00A9D6EB /* HomeAdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdCell.swift; sourceTree = "<group>"; };
+		57E5848921571E5E00A9D6EB /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		57E5848B21571E9E00A9D6EB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		57E5848D2157205100A9D6EB /* BroadcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastViewController.swift; sourceTree = "<group>"; };
+		57E5848F2157295B00A9D6EB /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		57E5849121572C7000A9D6EB /* BroadcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastCell.swift; sourceTree = "<group>"; };
+		57E5849421572DB900A9D6EB /* BroadcastCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastCollectionCell.swift; sourceTree = "<group>"; };
+		57E584962157322A00A9D6EB /* Wear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wear.swift; sourceTree = "<group>"; };
 		AB3DC5F57068823879592018 /* Pods-JKIguatemi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKIguatemi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKIguatemi/Pods-JKIguatemi.debug.xcconfig"; sourceTree = "<group>"; };
 		C37BCE6F9EE2900E72B1F209 /* Pods-JKIguatemi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKIguatemi.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKIguatemi/Pods-JKIguatemi.release.xcconfig"; sourceTree = "<group>"; };
 		F4544046649440A461C0D9BB /* Pods_JKIguatemi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JKIguatemi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +104,7 @@
 				5756F2442156C882008D0F56 /* Main.storyboard */,
 				57E5847D2157027100A9D6EB /* Home */,
 				57E58482215710B600A9D6EB /* Influencer */,
-				5756F2422156C882008D0F56 /* VisionViewController.swift */,
+				57E5849321572C7900A9D6EB /* Broadcast */,
 				57E584742156E31300A9D6EB /* Supporting Files */,
 			);
 			path = JKIguatemi;
@@ -95,11 +113,14 @@
 		57E584742156E31300A9D6EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57E5848F2157295B00A9D6EB /* loading.json */,
 				5756F2402156C882008D0F56 /* AppDelegate.swift */,
 				5756F2472156C884008D0F56 /* Assets.xcassets */,
 				5756F2492156C884008D0F56 /* LaunchScreen.storyboard */,
 				5756F24C2156C884008D0F56 /* Info.plist */,
 				57E584772156FB3100A9D6EB /* BorderView.swift */,
+				57E5848921571E5E00A9D6EB /* OverlayView.swift */,
+				57E5848B21571E9E00A9D6EB /* Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -110,7 +131,7 @@
 				57E584722156E2F900A9D6EB /* HomeViewController.swift */,
 				57E5847E2157062000A9D6EB /* HomeSearchViewController.swift */,
 				57E584792156FE7100A9D6EB /* HomeCell.swift */,
-				57E5847B2157004900A9D6EB /* HomeSearchCell.swift */,
+				57E58487215718DC00A9D6EB /* HomeAdCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -119,9 +140,23 @@
 			isa = PBXGroup;
 			children = (
 				57E584802157087800A9D6EB /* InfluencerViewController.swift */,
+				57E58485215716AE00A9D6EB /* InfluencerStyleCell.swift */,
+				57E5847B2157004900A9D6EB /* InfluencerStyleCollectionCell.swift */,
 				57E58483215710E300A9D6EB /* InfluencerOtherCell.swift */,
 			);
 			path = Influencer;
+			sourceTree = "<group>";
+		};
+		57E5849321572C7900A9D6EB /* Broadcast */ = {
+			isa = PBXGroup;
+			children = (
+				57E5848D2157205100A9D6EB /* BroadcastViewController.swift */,
+				57E5849121572C7000A9D6EB /* BroadcastCell.swift */,
+				57E5849421572DB900A9D6EB /* BroadcastCollectionCell.swift */,
+				5756F2422156C882008D0F56 /* VisionViewController.swift */,
+				57E584962157322A00A9D6EB /* Wear.swift */,
+			);
+			path = Broadcast;
 			sourceTree = "<group>";
 		};
 		D5E78499DFC60182B730F816 /* Pods */ = {
@@ -195,6 +230,7 @@
 			files = (
 				5756F24B2156C884008D0F56 /* LaunchScreen.storyboard in Resources */,
 				5756F2482156C884008D0F56 /* Assets.xcassets in Resources */,
+				57E584902157295B00A9D6EB /* loading.json in Resources */,
 				5756F2462156C882008D0F56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,10 +246,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JKIguatemi/Pods-JKIguatemi-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/algorithmia/algorithmia.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/algorithmia.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -245,15 +283,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E5848E2157205100A9D6EB /* BroadcastViewController.swift in Sources */,
 				57E584782156FB3100A9D6EB /* BorderView.swift in Sources */,
+				57E584972157322A00A9D6EB /* Wear.swift in Sources */,
+				57E58488215718DC00A9D6EB /* HomeAdCell.swift in Sources */,
 				57E5847F2157062000A9D6EB /* HomeSearchViewController.swift in Sources */,
 				57E5847A2156FE7100A9D6EB /* HomeCell.swift in Sources */,
 				57E584812157087800A9D6EB /* InfluencerViewController.swift in Sources */,
+				57E5849221572C7000A9D6EB /* BroadcastCell.swift in Sources */,
+				57E5849521572DB900A9D6EB /* BroadcastCollectionCell.swift in Sources */,
+				57E58486215716AE00A9D6EB /* InfluencerStyleCell.swift in Sources */,
 				57E584732156E2F900A9D6EB /* HomeViewController.swift in Sources */,
 				57E58484215710E300A9D6EB /* InfluencerOtherCell.swift in Sources */,
+				57E5848C21571E9E00A9D6EB /* Extensions.swift in Sources */,
 				5756F2432156C882008D0F56 /* VisionViewController.swift in Sources */,
+				57E5848A21571E5E00A9D6EB /* OverlayView.swift in Sources */,
 				5756F2412156C882008D0F56 /* AppDelegate.swift in Sources */,
-				57E5847C2157004900A9D6EB /* HomeSearchCell.swift in Sources */,
+				57E5847C2157004900A9D6EB /* InfluencerStyleCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
