@@ -10,7 +10,7 @@ import UIKit
 import ANLoader
 
 protocol  InfluencerStyleCellDelegate {
-    func itemSelected(image: UIImage)
+    func itemSelected(image: UIImage, index: Int)
 }
 
 class InfluencerStyleCell: UITableViewCell {
@@ -63,7 +63,7 @@ extension InfluencerStyleCell: UICollectionViewDataSource, UICollectionViewDeleg
         if indexPath.section == 0 {
             let cell = collectionView.cellForItem(at: indexPath) as! InfluencerStyleCollectionCell
             cell.checkImageView.isHidden = !cell.checkImageView.isHidden
-            delegate?.itemSelected(image: cell.imageView.image!)
+            delegate?.itemSelected(image: cell.imageView.image!, index: indexPath.row)
         }
     }
 }

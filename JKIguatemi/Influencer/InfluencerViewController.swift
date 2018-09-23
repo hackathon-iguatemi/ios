@@ -21,6 +21,7 @@ class InfluencerViewController: UIViewController {
         }
     }
     var influencer: Influencer?
+    var selectedURLs = [URL]()
     var selectedImages = [UIImage]()
     var imagesSentCount = 0
     
@@ -34,6 +35,12 @@ class InfluencerViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.view.backgroundColor = UIColor.clear
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! BroadcastViewController
+        vc.imagesURL = selectedURLs
+        vc.images = selectedImages
     }
     
     func fetchScreen() {
@@ -51,6 +58,7 @@ class InfluencerViewController: UIViewController {
     }
     
     @IBAction func broadcastPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "toBroadcastVC", sender: nil)
     }
 }
 
@@ -73,8 +81,8 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell") as! InfluencerStyleCell
-            cell.looks = (influencer?.looks)!
             cell.delegate = self
+            cell.looks = (influencer?.looks)!
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "otherCell")
@@ -96,7 +104,7 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension InfluencerViewController: InfluencerStyleCellDelegate {
     
-    func itemSelected(image: UIImage) {
+    func itemSelected(image: UIImage, index: Int) {
         if selectedImages.count == 0 {
             proceedView.frame = CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 100)
             view.addSubview(proceedView)
@@ -104,12 +112,9 @@ extension InfluencerViewController: InfluencerStyleCellDelegate {
                 self.proceedView.frame = CGRect(x: 0, y: self.view.frame.height-100, width: self.view.frame.width, height: 100)
             }, completion: { success in
             })
-            if selectedImages.contains(image) {
-                selectedImages.remove(at: selectedImages.lastIndex(of: image)!)
-            }
-            else {
-                selectedImages.append(image)
-            }
         }
+        let look = URL(string: (influencer?.looks[index])!)
+        selectedURLs.append(look!)
+        selectedImages.append(image)
     }
 }

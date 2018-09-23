@@ -8,11 +8,13 @@
 
 import UIKit
 import algorithmia
+import ANLoader
 
 class BroadcastCell: UITableViewCell {
 
     @IBOutlet var styleImageView: UIImageView!
     @IBOutlet var collectionView: UICollectionView!
+    var lookImage: UIImage?
     var imageURL: URL? {
         didSet {
             fetchML()
@@ -28,6 +30,7 @@ class BroadcastCell: UITableViewCell {
     }
     
     func fetchML() {
+        ANLoader.showLoading()
         let data = try? Data(contentsOf: imageURL!)
         if let imageData = data {
             styleImageView.image = UIImage(data: imageData)
@@ -46,6 +49,7 @@ class BroadcastCell: UITableViewCell {
             self.wears = algorithmiaResponse.articles
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                ANLoader.hide()
             }
         }
     }

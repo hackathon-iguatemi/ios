@@ -12,6 +12,7 @@ import Lottie
 class BroadcastViewController: UIViewController {
 
     @IBOutlet var loadingContainerView: UIView!
+    var images = [UIImage]()
     var imagesURL = [URL]()
     
     override func viewDidLoad() {

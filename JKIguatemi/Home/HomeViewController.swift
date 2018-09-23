@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ANLoader
 
 class HomeViewController: UIViewController {
 
@@ -137,10 +138,13 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        dismiss(animated: true, completion: nil)
-        APIClient.upload(image: image) { (responseString) in
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "toBroadcastVC", sender: responseString)
+        dismiss(animated: true) {
+            ANLoader.showLoading()
+            APIClient.upload(image: image) { (responseString) in
+                DispatchQueue.main.async {
+                    ANLoader.hide()
+                    self.performSegue(withIdentifier: "toBroadcastVC", sender: responseString)
+                }
             }
         }
     }
