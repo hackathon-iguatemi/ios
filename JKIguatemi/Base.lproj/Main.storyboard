@@ -276,7 +276,7 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-check" translatesAutoresizingMaskIntoConstraints="NO" id="IIL-wG-ZWW">
-                                                                        <rect key="frame" x="125" y="0.0" width="25" height="25"/>
+                                                                        <rect key="frame" x="125" y="35" width="25" height="25"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     </imageView>
                                                                 </subviews>
