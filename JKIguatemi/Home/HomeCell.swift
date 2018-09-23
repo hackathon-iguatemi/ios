@@ -16,6 +16,8 @@ class HomeCell: UITableViewCell {
     @IBOutlet var followersCount: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     var namesString = [String]()
+    var currentNumber = 1
+    var nextInt = 1
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,6 +33,12 @@ class HomeCell: UITableViewCell {
             }
         }
         collectionView.reloadData()
+    }
+    
+    func generateRandomNumber() {
+        repeat {
+            nextInt = Int.random(in: 1 ..< 6)
+        } while currentNumber == nextInt
     }
 }
 
@@ -48,7 +56,8 @@ extension HomeCell: UICollectionViewDataSource, UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeAdCell
-        cell.imageView.image = UIImage(named: "ad\(Int.random(in: 1 ..< 6))")
+        generateRandomNumber()
+        cell.imageView.image = UIImage(named: "ad\(nextInt)")
         if namesString.count > 0 {
             cell.aboutLabel.text = namesString[Int.random(in: 1 ..< 6)]
         }
