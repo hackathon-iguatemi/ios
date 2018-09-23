@@ -13,6 +13,7 @@ import ANLoader
 class HomeViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    var namesString = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class HomeViewController: UIViewController {
         search.searchResultsUpdater = self
         navigationItem.hidesSearchBarWhenScrolling = false
         tableView.contentInset = UIEdgeInsets(top: 40,left: 0,bottom: 0,right: 0)
+        fetchSimilars()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,7 +56,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return 1
         default:
-            return 5
+            return 4
         }
     }
     
@@ -65,8 +67,13 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.delegate = self
             return cell
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! HomeCell
+            cell.profileImageView.image = UIImage(named: "person\(indexPath.row + 1)")
+            cell.followersCount.text = "\(Int.random(in: 8...20))K"
+            if namesString.count > 0 {
+                cell.nameLabel.text = namesString[indexPath.row]
+            }
+            return cell
         }
     }
     
@@ -77,6 +84,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             return 320
         }
+    }
+    
+    func fetchSimilars() {
+        if let URL = Bundle.main.url(forResource: "Similars", withExtension: "plist") {
+            if let plistRes = NSArray(contentsOf: URL) as? [String] {
+                namesString = plistRes
+            }
+        }
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

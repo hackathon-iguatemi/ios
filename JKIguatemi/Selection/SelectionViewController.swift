@@ -74,6 +74,9 @@ extension SelectionViewController : CardStackDatasource {
         cell.delegate = self
         cell.imageView.image = UIImage(named: "ad\(index.row + 1)")
         cell.priceLabel.text = "$\(Int.random(in: 50...300))"
+        if cardsString.count > 0 {
+            cell.nameLabel.text = cardsString[index.row]
+        }
         cell.backgroundColor = Constants.colors[index.item % Constants.colors.count]
         return cell
     }

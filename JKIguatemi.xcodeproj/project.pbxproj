@@ -14,6 +14,8 @@
 		57076D1C21578DE600053241 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57076D1B21578DE600053241 /* APIClient.swift */; };
 		57076D202157CEDA00053241 /* InfluencerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57076D1F2157CEDA00053241 /* InfluencerCollectionCell.swift */; };
 		57076D222157D42A00053241 /* Selection.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57076D212157D42A00053241 /* Selection.plist */; };
+		57076D242157DBAC00053241 /* Similars.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57076D232157DBAC00053241 /* Similars.plist */; };
+		57076D262157E01C00053241 /* Stores.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57076D252157E01C00053241 /* Stores.plist */; };
 		572AC2F421576B1300FBB774 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572AC2F321576B1300FBB774 /* GradientView.swift */; };
 		5756F2412156C882008D0F56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5756F2402156C882008D0F56 /* AppDelegate.swift */; };
 		5756F2462156C882008D0F56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5756F2442156C882008D0F56 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		57076D1B21578DE600053241 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		57076D1F2157CEDA00053241 /* InfluencerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfluencerCollectionCell.swift; sourceTree = "<group>"; };
 		57076D212157D42A00053241 /* Selection.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Selection.plist; sourceTree = "<group>"; };
+		57076D232157DBAC00053241 /* Similars.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Similars.plist; sourceTree = "<group>"; };
+		57076D252157E01C00053241 /* Stores.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Stores.plist; sourceTree = "<group>"; };
 		572AC2F321576B1300FBB774 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		5756F23D2156C882008D0F56 /* JKIguatemi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKIguatemi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5756F2402156C882008D0F56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,8 +129,8 @@
 				57E58482215710B600A9D6EB /* Influencer */,
 				57E5849321572C7900A9D6EB /* Broadcast */,
 				57B1130F21574BCE00DC4EDA /* Selection */,
-				57E584742156E31300A9D6EB /* Supporting Files */,
 				57076D14215771E100053241 /* CheckoutViewController.swift */,
+				57E584742156E31300A9D6EB /* Supporting Files */,
 			);
 			path = JKIguatemi;
 			sourceTree = "<group>";
@@ -153,6 +157,8 @@
 				57E5848921571E5E00A9D6EB /* OverlayView.swift */,
 				57E5848B21571E9E00A9D6EB /* Extensions.swift */,
 				57076D212157D42A00053241 /* Selection.plist */,
+				57076D232157DBAC00053241 /* Similars.plist */,
+				57076D252157E01C00053241 /* Stores.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -269,6 +275,8 @@
 			files = (
 				5756F24B2156C884008D0F56 /* LaunchScreen.storyboard in Resources */,
 				57076D222157D42A00053241 /* Selection.plist in Resources */,
+				57076D242157DBAC00053241 /* Similars.plist in Resources */,
+				57076D262157E01C00053241 /* Stores.plist in Resources */,
 				5756F2482156C884008D0F56 /* Assets.xcassets in Resources */,
 				57E584902157295B00A9D6EB /* loading.json in Resources */,
 				5756F2462156C882008D0F56 /* Main.storyboard in Resources */,

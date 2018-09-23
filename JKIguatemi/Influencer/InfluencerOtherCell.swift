@@ -11,11 +11,22 @@ import UIKit
 class InfluencerOtherCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
-   
+   var namesString = [String]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         collectionView.dataSource = self
         collectionView.delegate = self
+        fetchSimilars()
+    }
+    
+    func fetchSimilars() {
+        if let URL = Bundle.main.url(forResource: "Similars", withExtension: "plist") {
+            if let plistRes = NSArray(contentsOf: URL) as? [String] {
+                 namesString = plistRes
+            }
+        }
+        collectionView.reloadData()
     }
 }
     
@@ -29,11 +40,13 @@ extension InfluencerOtherCell: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InfluencerCollectionCell
+        cell.imageView.image = UIImage(named: "person\(indexPath.row + 1)")
+        cell.nameLabel.text = namesString[indexPath.row]
         return cell
     }
 }
