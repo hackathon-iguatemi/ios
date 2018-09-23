@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (5.0.0.beta.1)
   - algorithmia (0.1.3)
+  - ImageLoader (0.14.0)
   - lottie-ios (2.5.0)
   - TisprCardStack (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `alamofire5`)
   - algorithmia
+  - ImageLoader
   - lottie-ios
   - TisprCardStack
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - algorithmia
+    - ImageLoader
     - lottie-ios
     - TisprCardStack
 
@@ -29,9 +32,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: eafeeb206da2148045e57a5dc3c6a4acc65b9eb2
   algorithmia: 6416ed22db9b00a354bf92b6fdf59f1ca449a176
+  ImageLoader: 56f57e35d6ed26a74183dc2e472133b4b22eb7b9
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   TisprCardStack: 49c1b04e124105d7f0bcec3e0a6aac703229e143
 
-PODFILE CHECKSUM: c3d7b3faf1306dd1edd2b10c60d149147d290429
+PODFILE CHECKSUM: 7917a33787965e5e2e653e31182a76f3f91e5e83
 
 COCOAPODS: 1.5.3

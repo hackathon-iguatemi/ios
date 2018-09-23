@@ -44,19 +44,35 @@ class APIClient {
         task.resume()
     }
     
-    class func getInfluencerDetail(with name: String, completion: @escaping (_ result: String) -> Void) {
-        AF.request("https://hacka-jk.herokuapp.com/images/\(name)").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
-            }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
+    class func getInfluencerDetail(with name: String, completion:@escaping (Result<Influencer>)->Void) {
+        AF.request("https://hacka-jk.herokuapp.com/images/\(name)").responseJSONDecodable { (response: DataResponse<Influencer>) in
+            completion(response.result)
+        }
+    }
+    
+    class func sendBroadcast(body: BroadcastBody) {
+        
+    }
+    
+    struct BroadcastBody: Codable {
+        let influencer_name: String
+        let items: [RequestBodyItem]
+        
+        struct RequestBodyItem: Codable {
+            let imageID: String
+            let ml_analysis: RequestBodyMLAnalysis
+        }
+        
+        struct  RequestBodyMLAnalysis: Codable {
+            let article_name: String
+            let bounding_box: RequestBodyBoundingBox
+        }
+        
+        struct RequestBodyBoundingBox: Codable {
+            let x0: Int
+            let x1: Int
+            let y0: Int
+            let y1: Int
         }
     }
 }

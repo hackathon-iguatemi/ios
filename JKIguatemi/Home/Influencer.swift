@@ -9,7 +9,14 @@
 import Foundation
 
 
-struct Influencer {
+struct Influencer: Codable {
     let name: String
-    let images: [String]
+    let imageHero: String
+    let looks: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case imageHero = "image-hero"
+        case looks = "looks"
+    }
 }

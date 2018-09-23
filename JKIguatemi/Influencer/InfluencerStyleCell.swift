@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageLoader
 
 protocol  InfluencerStyleCellDelegate {
     func itemSelected(image: UIImage)
@@ -16,6 +17,21 @@ class InfluencerStyleCell: UITableViewCell {
 
     @IBOutlet var collectionView: UICollectionView!
     var delegate: InfluencerStyleCellDelegate?
+    var lookImages = [UIImage]()
+    var looks = [String]() {
+        didSet {
+            fetchImages()
+        }
+    }
+    
+    func fetchImages() {
+        for look in looks {
+            let url = URL(string: look)
+            let data = try? Data(contentsOf: url!)
+            lookImages.append(UIImage(data: data!)!)
+        }
+        collectionView.reloadData()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,18 +49,20 @@ extension InfluencerStyleCell: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return lookImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! InfluencerStyleCollectionCell
-        cell.imageView.image = UIImage(named: "image\(indexPath.row+1)")
+        cell.imageView.image = lookImages[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! InfluencerStyleCollectionCell
-        cell.checkImageView.isHidden = !cell.checkImageView.isHidden
-        delegate?.itemSelected(image: cell.imageView.image!)
+        if indexPath.section == 0 {
+            let cell = collectionView.cellForItem(at: indexPath) as! InfluencerStyleCollectionCell
+            cell.checkImageView.isHidden = !cell.checkImageView.isHidden
+            delegate?.itemSelected(image: cell.imageView.image!)
+        }
     }
 }

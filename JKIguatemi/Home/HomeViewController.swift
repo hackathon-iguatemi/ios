@@ -82,7 +82,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         guard indexPath.section != 0 else {
             return
         }
-        performSegue(withIdentifier: "toInfluencerVC", sender: nil)
+        let cell = tableView.cellForRow(at: indexPath) as! HomeCell
+        performSegue(withIdentifier: "toInfluencerVC", sender: cell.nameLabel.text!)
     }
 }
 

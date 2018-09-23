@@ -10,6 +10,9 @@ import UIKit
 
 class HomeCell: UITableViewCell {
 
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var usernameLabel: UILabel!
+    @IBOutlet var followersCount: UILabel!
     @IBOutlet var collectionView: UICollectionView!
 
     override func awakeFromNib() {

@@ -12,11 +12,14 @@ class InfluencerViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var proceedView: UIView!
+    @IBOutlet var influencerNameLabel: UILabel!
+    @IBOutlet var influencerHeroImageView: UIImageView!
     var influencerName: String! {
         didSet {
             fetchScreen()
         }
     }
+    var influencer: Influencer?
     var selectedImages = [UIImage]()
     var imagesSentCount = 0
     
@@ -33,9 +36,16 @@ class InfluencerViewController: UIViewController {
     }
     
     func fetchScreen() {
-        APIClient.getInfluencerDetail(with: influencerName) { (result) in
-            print(result)
+        APIClient.getInfluencerDetail(with: influencerName) { (influencer) in
+            self.influencer = influencer.value
+            self.updateScreen()
         }
+    }
+    
+    func updateScreen() {
+        influencerNameLabel.text = influencer?.name
+        influencerHeroImageView.downloaded(from: (influencer?.imageHero)!)
+        tableView.reloadData()
     }
     
     @IBAction func broadcastPressed(_ sender: UIButton) {
@@ -51,6 +61,9 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard influencer != nil else {
+            return 0
+        }
         return 2
     }
     
@@ -58,6 +71,7 @@ extension InfluencerViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell") as! InfluencerStyleCell
+            cell.looks = (influencer?.looks)!
             cell.delegate = self
             return cell
         default:

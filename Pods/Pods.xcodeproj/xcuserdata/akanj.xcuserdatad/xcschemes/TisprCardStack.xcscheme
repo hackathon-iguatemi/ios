@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4A6667409B10C9EEEDB36DFBB91D4203"
+               BlueprintIdentifier = "E57C468714B9B96BA02CF012D8797D9A"
                BlueprintName = "TisprCardStack"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "TisprCardStack.framework">
